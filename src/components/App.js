@@ -4,11 +4,13 @@ import ChildComponent from './ChildComponent';
 const App = () => {
  //code here
  const [data,setData] = useState("");
-
+const update = ()=>{
+    setData(e.target.value)
+}
   return (
     <div id="main">
-      <ChildComponent /> 
-       <input id='input' onChange={()=>setData(e.target.value)} />
+      <ChildComponent result={data} /> 
+       <input id='input' onChange={()=>update} />
     
       <p id='output'>{data}</p>
     </div>
