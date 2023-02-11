@@ -3,21 +3,21 @@ import '../styles/App.css';
 import ChildComponent from './ChildComponent';
 const App = () => {
  //code here
- const [data,setData] = useState("");
- const update= (e)=>{
-   const ans = setData(e.target.value);
-  return ans;
- }
+ const [input, setInput] = useState('');
 
+  const handleInputChange = (event) => {
+    setInput(event.target.value);
+  };
+ 
   return (
     <div id="main">
-      <ChildComponent result={ans} /> 
-       <input id='input' onChange={()=>update} />
-    
-      <p id='output'>{result}</p>
+      <ChildComponent> 
+       <input id='input' onChange={handleInputChange} />
+      </ChildComponent>
+      <p id='output'>{Number(input) * Number(input)}</p>
     </div>
-  )
-}
+  );
+};
 
 
 export default App;
